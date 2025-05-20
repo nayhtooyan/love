@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Love Notes 💌</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="heart-container" aria-hidden="true"></div>
+
+  <div class="music-toggle">
+    <button id="musicBtn">🔊 Play Music</button>
+    <audio id="bgMusic" loop>
+      <source src="assets/love.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <div class="container">
+    <h1>Daily Love Notes 💖</h1>
+    <p class="subtitle">Open a new love note every day, my dearest...</p>
+
+    <div id="notes" class="notes-container"></div>
+  </div>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content" id="popupContent">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <div id="noteText"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
