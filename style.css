@@ -201,3 +201,11 @@ h1 {
     padding: 8px 12px;
   }
 }
+
+.countdown {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
