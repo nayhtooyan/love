@@ -83,3 +83,26 @@ function spawnHeart() {
   setTimeout(() => heart.remove(), 7000);
 }
 setInterval(spawnHeart, 500);
+
+const countdownTimer = document.getElementById("countdownTimer");
+
+function updateCountdown() {
+  const startDate = new Date("2025-05-20");
+  const now = new Date();
+  const diffDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+  const nextDay = new Date(startDate.getTime() + (diffDays + 1) * 24 * 60 * 60 * 1000);
+  const timeLeft = nextDay - now;
+
+  if (timeLeft > 0) {
+    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeLeft / 1000) % 60);
+    countdownTimer.innerText = `⏳ Next note unlocks in ${hours}h ${minutes}m ${seconds}s`;
+  } else {
+    countdownTimer.innerText = "🎉 A new note is ready now!";
+  }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000); // updates every second
+
